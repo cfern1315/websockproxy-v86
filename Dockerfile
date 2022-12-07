@@ -17,6 +17,7 @@ RUN pip2 install -r /opt/v86/requirements.txt
 RUN npm install --global http-server
 
 EXPOSE 80
+EXPOSE 8080
 EXPOSE 9134
 
 CMD /opt/v86/docker-startup.sh
