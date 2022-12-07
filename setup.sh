@@ -4,6 +4,7 @@ mkdir build
 cp switchedrelay.py limiter.py requirements.txt build/
 cp docker-image-config/docker-startup.sh && mv build/docker-startup.sh start.sh && chmod +x start.sh
 cp -r public build/
+mkdir -p /etc/dnsmasq.d
 cp docker-image-config/dnsmasq/interface docker-image-config/dnsmasq/dhcp /etc/dnsmasq.d/
 
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py && python2 get-pip.py && rm get-pip.py
