@@ -34,6 +34,20 @@ docker run --privileged -p 8080:80 --name relay benjamincburns/jor1k-relay:lates
 and point jor1k, your VPN client, or your emulator of choice at
 ws://YOUR_HOSTNAME:8080/
 
+OR
+
+```shell
+docker build -t v86 - < ./Dockerfile
+docker run --privileged -p 80:8080 -p 9134:9134 v86
+```
+
+and point jor1k, your VPN client, or your emulator of choice at
+ws://YOUR_HOSTNAME:9134
+with webserver at
+http://YOUR_HOSTNAME:80
+
+(Make sure you open ports 80, 8080, and 9134)
+
 Note that the container must be run in priviliged mode so that it can create
 its TAP device and set up IPv4 masquerading.
 
